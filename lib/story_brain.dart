@@ -24,17 +24,14 @@ List<Story> _storyData = [
        'I love Elton John! Hand him the cassette tape.',
        'It\'s him or me! You take the knife and stab him.'),
   Story(
-
       'What? Such a cop out! Did you know traffic accidents are the second leading cause of accidental death for most adult age groups?',
       'Restart',
       ''),
   Story(
-
       'As you smash through the guardrail and careen towards the jagged rocks below you reflect on the dubious wisdom of stabbing someone while they are driving a car you are in.',
        'Restart',
        ''),
   Story(
-
       'You bond with the murderer while crooning verses of "Can you feel the love tonight". He drops you off at the next town. Before you go he asks you if you know any good places to dump bodies. You reply: "Try the pier".',
       'Restart',
       '')
@@ -53,21 +50,29 @@ List<Story> _storyData = [
   String getChoice2() {
     return _storyData[_storyNumber].choice2;
   }
-  void nextStory(int choiceNumber) {
-    if (choiceNumber == 1 && _storyNumber == 0)
+
+  void nextStory(int userChoose) {
+    if (userChoose == 1 && _storyNumber == 0) {
       _storyNumber = 2;
-    else if (choiceNumber == 2 && _storyNumber == 0)
+    }
+    else if (userChoose == 2 && _storyNumber == 0) {
       _storyNumber = 1;
-    else if (choiceNumber == 1 && _storyNumber == 1)
+    }
+    else if (userChoose == 1 && _storyNumber == 1) {
       _storyNumber = 2;
-    else if (choiceNumber == 2 && _storyNumber == 1)
+    }
+    else if (userChoose == 2 && _storyNumber == 1) {
       _storyNumber = 3;
-    else if (choiceNumber == 1 && _storyNumber == 2)
+    }
+    else if (userChoose == 1 && _storyNumber == 2) {
       _storyNumber = 5;
-    else if (choiceNumber == 2 && _storyNumber == 2)
+    }
+    else if (userChoose == 2 && _storyNumber == 2) {
       _storyNumber = 4;
-    else if (_storyNumber == 3 || _storyNumber == 4 || _storyNumber == 5)
+    }
+    else if (_storyNumber == 3 || _storyNumber == 4 || _storyNumber == 5) {
       reset();
+    }
 
   }
 
